@@ -35,7 +35,7 @@ const controlSearch = async () => {
         try {
             // 4) Search for recipes
             await state.search.getResults();
-    
+
             // 5) Render results on UI
             clearLoader();
             searchView.renderResults(state.search.result);
@@ -88,7 +88,7 @@ const controlRecipe = async () => {
             // Calculate servings and time
             state.recipe.calcTime();
             state.recipe.calcServings();
-    
+
             // Render recipe
             clearLoader();
             recipeView.renderRecipe(
@@ -102,7 +102,7 @@ const controlRecipe = async () => {
         }
     }
 };
- 
+
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
 
@@ -132,7 +132,7 @@ elements.shopping.addEventListener('click', e => {
         // Delete from UI
         listView.deleteItem(id);
 
-    // Handle the count update
+        // Handle the count update
     } else if (e.target.matches('.shopping__count-value')) {
         const val = parseFloat(e.target.value, 10);
         state.list.updateCount(id, val);
@@ -162,7 +162,7 @@ const controlLike = () => {
         // Add like to UI list
         likesView.renderLike(newLike);
 
-    // User HAS liked current recipe
+        // User HAS liked current recipe
     } else {
         // Remove like from the state
         state.likes.deleteLike(currentID);
@@ -179,7 +179,7 @@ const controlLike = () => {
 // Restore liked recipes on page load
 window.addEventListener('load', () => {
     state.likes = new Likes();
-    
+
     // Restore likes
     state.likes.readStorage();
 

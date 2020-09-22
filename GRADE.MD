@@ -5,4 +5,4 @@ Points Awarded	 |  Code Documentation (10)	| .gitignore and README.md (10)	| Mul
 
 # Met all grading Criteria
 
-# Total : 100
+# Grade : 100
